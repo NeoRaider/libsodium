@@ -3,6 +3,10 @@
 .text
 .p2align 5
 
+#ifdef __ELF__
+.type crypto_stream_salsa20,@function
+#endif
+
 .globl _crypto_stream_salsa20
 .globl crypto_stream_salsa20
 _crypto_stream_salsa20:
@@ -34,6 +38,10 @@ jmp ._start
 
 .text
 .p2align 5
+
+#ifdef __ELF__
+.type crypto_stream_salsa20_xor,@function
+#endif
 
 .globl _crypto_stream_salsa20_xor
 .globl crypto_stream_salsa20_xor
